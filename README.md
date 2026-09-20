@@ -3,11 +3,13 @@ About python-blockbuster-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-blockbuster-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/cbornet/blockbuster
+Home: https://pypi.org/project/blockbuster
 
 Package license: Apache-2.0
 
 Summary: Utility to detect blocking calls in the async event loop
+
+Development: https://github.com/cbornet/blockbuster
 
 Current build status
 ====================
