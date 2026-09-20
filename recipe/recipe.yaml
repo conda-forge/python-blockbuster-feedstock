@@ -3,6 +3,7 @@ schema_version: 1
 
 context:
   version: "1.5.28"
+  python_check_max: "3.14"
 
 package:
   name: python-blockbuster
@@ -16,7 +17,7 @@ build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -33,7 +34,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - files:
       source:
         - tests/
@@ -49,7 +50,8 @@ tests:
       - coverage report --show-missing --skip-covered --fail-under=89
 
 about:
-  homepage: https://github.com/cbornet/blockbuster
+  homepage: https://pypi.org/project/blockbuster
+  repository: https://github.com/cbornet/blockbuster
   license_file: LICENSE
   license: Apache-2.0
   summary: Utility to detect blocking calls in the async event loop
