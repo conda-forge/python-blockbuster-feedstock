@@ -31,6 +31,8 @@ requirements:
 tests:
   - package_contents:
       strict: true
+      files:
+        - etc/conda/test-files/python-blockbuster/**
       site_packages:
         - blockbuster/**
         - blockbuster-${{ version }}.dist-info/**
