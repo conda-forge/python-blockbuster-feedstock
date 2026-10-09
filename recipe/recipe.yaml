@@ -10,7 +10,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/b/blockbuster/blockbuster-${{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/b/blockbuster/blockbuster-${{ version }}.tar.gz
   sha256: 0fd507a4a115eb93eddf580d7a0c29f0a8ef2d447ded7f853d0cf9ab1cf9787d
 
 build:
@@ -29,6 +29,11 @@ requirements:
     - python >=${{ python_min }}
 
 tests:
+  - package_contents:
+      strict: true
+      site_packages:
+        - blockbuster/**
+        - blockbuster-${{ version }}.dist-info/**
   - python:
       imports: blockbuster
       pip_check: true
